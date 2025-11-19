@@ -57,8 +57,7 @@ footer {
   font-weight: bold;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input{
   width: 100%;
   padding: 0.8rem 1rem;
   border: 2px solid #e0e0e0;
