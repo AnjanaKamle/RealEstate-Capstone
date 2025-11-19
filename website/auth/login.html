@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - PremiumResidencies</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  
+  <div class="auth-container">
+    <h1 class="auth-title">Welcome Back</h1>
+    
+    <form method="POST" action="#">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+      </div>
+
+      <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+        <input type="checkbox" id="remember" name="remember" style="width:10px; height:10px;">
+        <label for="remember" style="margin: 0;">Remember me</label>
+      </div>
+
+      <button type="submit" class="form-submit">Login</button>
+    </form>
+
+    <div class="form-link">
+      <p>Don't have an account? <a href="./signup.html">Sign up here</a></p>
+      <p><a href="#">Forgot your password?</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Help & Support</h4>
+        <p><a href="#">Contact Us</a></p>
+        <p><a href="#">FAQ</a></p>
+        <p><a href="#">Property Valuation</a></p>
+        <p><a href="#">Financing Options</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Connect With Us</h4>
+        <p>Email: <a href="#">info@premierrealestate.com</a></p>
+        <p>Phone: <a href="#">+1 (800) 773-6437</a></p>
+        <p>Office Hours: Mon - Sat, 9 AM - 6 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Premier Real Estate. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
