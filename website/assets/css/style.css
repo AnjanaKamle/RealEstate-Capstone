@@ -68,12 +68,6 @@ footer {
   transition: border-color 0.3s ease;
 }
 
-.form-group textarea {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-}
-
-
  .form-submit {
   width: 100%;
   padding: 1rem;
