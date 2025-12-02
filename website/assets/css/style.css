@@ -71,7 +71,7 @@ a {
   gap: 18px;
 }
 
-/* Improved luxury logo */
+/* Luxury logo */
 .logo {
   font-family: Georgia, serif;
   font-size: 24px;
@@ -84,6 +84,7 @@ a {
   text-shadow: 0 0 6px rgba(212,175,55,0.25);
 }
 
+/* Desktop nav */
 .top-nav ul {
   display: flex;
   list-style: none;
@@ -198,7 +199,7 @@ a {
 }
 
 /* ===========================
-   SECTION TITLES
+   TITLES
    =========================== */
 
 .section-title {
@@ -238,7 +239,7 @@ a {
 }
 
 /* ===========================
-   SERVICES GRID
+   SERVICES
    =========================== */
 
 .services-grid {
@@ -252,8 +253,8 @@ a {
 }
 
 .service-card h3 {
-  margin: 8px 0 10px;
   font-size: 18px;
+  margin: 8px 0 10px;
 }
 
 .service-card p {
@@ -262,7 +263,7 @@ a {
 }
 
 /* ===========================
-   PROPERTIES GRID
+   PROPERTIES
    =========================== */
 
 .properties-grid {
@@ -294,7 +295,6 @@ a {
   height: 180px;
   background-size: cover;
   background-position: center;
-  background-color: #1a1a1a;
 }
 
 .property-info {
@@ -303,7 +303,6 @@ a {
 }
 
 .tag {
-  display: inline-block;
   background: var(--gold);
   color: var(--black);
   padding: 6px 8px;
@@ -313,8 +312,8 @@ a {
 }
 
 .property-info h3 {
-  margin: 6px 0 4px;
   font-size: 18px;
+  margin: 6px 0 4px;
 }
 
 .property-info p {
@@ -325,14 +324,13 @@ a {
 .property-footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-top: 12px;
 }
 
 .price {
-  color: var(--gold);
-  font-weight: 800;
   font-size: 16px;
+  font-weight: 800;
+  color: var(--gold);
 }
 
 .btn-small {
@@ -344,13 +342,12 @@ a {
 }
 
 /* ===========================
-   CTA
+   CTA SECTION
    =========================== */
 
 .cta-section {
   text-align: center;
   padding: 48px 0;
-  margin-top: 32px;
   background: linear-gradient(180deg, #080808f2, #0a0a0af3);
 }
 
@@ -371,7 +368,6 @@ a {
 .site-footer {
   background: linear-gradient(180deg, #070707, #0b0b0b);
   padding: 40px 0 22px;
-  border-top: 1px solid rgba(255,255,255,0.04);
   margin-top: 48px;
 }
 
@@ -392,18 +388,23 @@ a {
 
 .footer-bottom {
   text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.04);
   margin-top: 22px;
   padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  color: rgba(255,255,255,0.5);
   font-size: 13px;
+  color: rgba(255,255,255,0.5);
 }
 
 /* ===========================
-   RESPONSIVE
+   RESPONSIVE — TABLET
    =========================== */
 
 @media (max-width: 1024px) {
+  .logo {
+    font-size: 20px;
+    letter-spacing: 0.6px;
+  }
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -417,9 +418,42 @@ a {
   }
 }
 
+/* ===========================
+   RESPONSIVE — MOBILE (STACKED HEADER)
+   =========================== */
+
 @media (max-width: 720px) {
+
+  /* shrink logo */
+  .logo {
+    font-size: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  /* hide desktop nav */
   .top-nav {
     display: none;
+  }
+
+  /* stacked header layout */
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 14px 0;
+    gap: 14px;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .location-select,
+  .login-link,
+  .signup-btn {
+    width: 100%;
+    text-align: center;
   }
 
   .services-grid,
