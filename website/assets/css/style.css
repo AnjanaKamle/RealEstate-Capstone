@@ -1,95 +1,437 @@
+/* ===========================
+   Premium Residencies — Main Stylesheet
+   Component-based, clean formatting
+   =========================== */
 
+:root {
+  --black: #070707;
+  --bg: #0b0b0b;
+  --maroon: #7b1113;
+  --gold: #d4af37;
+  --muted: #bdb7b2;
+  --card-bg: #111213;
+  --white: #f6f4f2;
 
-/* FOOTER */
+  --radius: 8px;
+  --container-width: 1200px;
 
-footer {
-  background-color: #1a1a1a;
-  color: #f5f5f5;
-  padding:3rem 0;
-  margin-top:5rem;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 40px;
+  --space-xl: 72px;
 }
 
-.footer-container {
-  max-width:1200px;
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: Georgia, serif;
+  background: linear-gradient(180deg, #0b0b0b, #070707);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding:0 2rem;
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  padding: 0 24px;
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+
+.main-header {
+  background: linear-gradient(180deg, #050505f9, #080808f2);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  gap: 18px;
+}
+
+/* Improved luxury logo */
+.logo {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--gold), #f3d98b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 6px rgba(212,175,55,0.25);
+}
+
+.top-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav a {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.top-nav a.active,
+.top-nav a:hover {
+  color: var(--gold);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.location-select {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-link {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.signup-btn {
+  background: var(--maroon);
+  color: var(--white);
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* ===========================
+   HERO
+   =========================== */
+
+.hero {
+  min-height: 64vh;
+  padding: var(--space-xl) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0505058e, #050505d9);
+}
+
+.hero-inner {
+  position: relative;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 12px;
+}
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 22px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--maroon);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.btn-outline {
+  padding: 10px 18px;
+  border: 2px solid rgba(212,175,55,0.2);
+  color: var(--gold);
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* ===========================
+   SECTION TITLES
+   =========================== */
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* ===========================
+   SHARED CARD STYLES
+   =========================== */
+
+.card-base {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid rgba(212,175,55,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  padding: 20px;
+}
+
+.card-base::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: var(--gold);
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+/* ===========================
+   SERVICES GRID
+   =========================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  composes: card-base;
+}
+
+.service-card h3 {
+  margin: 8px 0 10px;
+  font-size: 18px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===========================
+   PROPERTIES GRID
+   =========================== */
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.property-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.55);
+  position: relative;
+}
+
+.property-card::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gold);
+}
+
+.property-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a1a;
+}
+
+.property-info {
+  padding: 16px;
+  padding-right: 30px;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.property-info h3 {
+  margin: 6px 0 4px;
+  font-size: 18px;
+}
+
+.property-info p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.property-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.price {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.btn-small {
+  background: var(--maroon);
+  color: var(--white);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+/* ===========================
+   CTA
+   =========================== */
+
+.cta-section {
+  text-align: center;
+  padding: 48px 0;
+  margin-top: 32px;
+  background: linear-gradient(180deg, #080808f2, #0a0a0af3);
+}
+
+.cta-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.cta-text {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+.site-footer {
+  background: linear-gradient(180deg, #070707, #0b0b0b);
+  padding: 40px 0 22px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  margin-top: 48px;
+}
+
+.footer-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 180px;
 }
 
 .footer-section h4 {
-  color: #d4af37;
+  margin-bottom: 10px;
 }
-
-
-.footer-section a {
-  color: #d4af37;
-}
-
 
 .footer-bottom {
   text-align: center;
-  margin: 2rem;
-  padding: 2rem;
-  border-top: 1px solid #4a4a4a;
-  color: #d4af37;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
 }
 
+/* ===========================
+   RESPONSIVE
+   =========================== */
 
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/*  AUTHENTICATION FORMS */
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.auth-title {
-  color: #8b0000;
-  text-align: center;
-  margin: 2rem;
-  font-size: 2rem;
+  .hero-title {
+    font-size: 44px;
+  }
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
+@media (max-width: 720px) {
+  .top-nav {
+    display: none;
+  }
 
-.form-group label {
-  display:block;
-  margin-bottom: 0.5rem;
-  color: #1a1a1a;
-  font-weight: bold;
-}
+  .services-grid,
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
 
-.form-group input{
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 4px;
-  font-family: 'Georgia', serif;
-  font-size: 1rem;
-}
+  .hero-title {
+    font-size: 32px;
+  }
 
- .form-submit {
-  width:100%;
-  padding:1rem;
-  background-color:#8b0000;
-  color:#f5f5f5;
-  border: none;
-  border-radius:4px;
-  font-size:1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition:all 0.3s ease;
-}
-
-.form-submit:hover {
-  background-color: #a52a2a;
-  transform: translateY(-3px);
-}
-
-.form-link {
-  text-align:center;
-  margin-top:2rem;
-}
-
-.form-link a {
-  color: #8b0000;
-  font-weight: bold;
+  .container {
+    padding: 0 16px;
+  }
 }
