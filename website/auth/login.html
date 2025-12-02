@@ -1,68 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login- PremiumResidencies</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Premium Residencies</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-  
-  <div class="auth-container">
-    <h1 class="auth-title">Welcome Back</h1>
-    
-    <form method="POST" action="#">
+
+  <!-- header (logo only for auth) -->
+  <header class="main-header auth-header">
+    <div class="container header-inner">
+      <a href="../pages/home.html" class="logo">Premium Residencies</a>
+    </div>
+  </header>
+
+  <!-- login form -->
+  <section class="auth-section">
+    <form class="auth-form" action="#" method="post" novalidate>
+
+      <h1 class="auth-title">Welcome <span style="color:#d4af37">Back</span></h1>
+      <p class="auth-subtitle">Sign in to access your account and manage your properties</p>
+
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com">
+        <input id="email" name="email" type="email" placeholder="Enter your email" required>
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required placeholder="Enter your password">
+        <input id="password" name="password" type="password" placeholder="Enter your password" required>
       </div>
 
-      <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
-        <input type="checkbox" id="remember" name="remember" style="width:10px; height:10px;">
-        <label for="remember">Remember me</label>
+      <div class="remember-row">
+        <label style="display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" style="width:16px;height:16px;">
+          <span style="font-size:14px; color:#bdb7b2;">Remember me</span>
+        </label>
+        <a href="#" style="font-size:14px;">Forgot password?</a>
       </div>
 
-      <button type="submit" class="form-submit">Login</button>
+      <button type="submit" class="btn-primary auth-btn">SIGN IN</button>
+
+      <p class="auth-switch">Don't have an account? <a href="signup.html">Sign Up</a></p>
+
+      <div class="auth-social">
+        <div class="auth-divider">Or continue with</div>
+
+        <div class="social-row">
+          <button type="button" class="social-btn">
+            <span class="social-icon">G</span>
+            <span>Google</span>
+          </button>
+
+          <button type="button" class="social-btn">
+            <span class="social-icon">f</span>
+            <span>Facebook</span>
+          </button>
+        </div>
+      </div>
+
     </form>
+  </section>
 
-    <div class="form-link">
-      <p>Don't have an account? <a href="./signup.html">Sign up here</a></p>
-      <p><a href="#">Forgot your password?</a></p>
-    </div>
-  </div>
-
-
-
-
-
-  
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
+  <!-- footer (simple) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
       <div class="footer-section">
-        <h4>Help & Support</h4>
-        <p><a href="#">Contact Us</a></p>
-        <p><a href="#">FAQ</a></p>
-        <p><a href="#">Property Valuation</a></p>
-      <p><a href="#">Financing Options</a></p>
+        <h4>Premium Residencies</h4>
+        <p>Your gateway to premium living and luxury interiors.</p>
       </div>
 
       <div class="footer-section">
-        <h4>Connect With Us</h4>
-        <p>Email: <a href="#">info@premierrealestate.com</a></p>
-        <p>Phone: <a href="#">+1 (800) 773-6437</a></p>
-        <p>Office Hours: Mon - Sat, 9 AM - 6 PM</p>
+        <h4>Quick Links</h4>
+        <p><a href="../pages/buy.html">Buy</a></p>
+        <p><a href="../pages/rent.html">Rent</a></p>
+        <p><a href="../pages/sell.html">Sell</a></p>
+        <p><a href="../pages/interiors.html">Interiors</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: help@premiumresidencies.com</p>
+        <p>Phone: +1 555 123 4567</p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 Premier Real Estate. All rights reserved.</p>
+      © 2025 Premium Residencies. All rights reserved.
     </div>
   </footer>
+
 </body>
 </html>

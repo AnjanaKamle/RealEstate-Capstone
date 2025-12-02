@@ -1,82 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up- PremiumResidencies</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - Premium Residencies</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
-  <div class="auth-container">
-    <h1 class="auth-title">Create Account</h1>
-    
-    <form>
-      <div class="form-group">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required placeholder="John Doe">
+  <!-- header -->
+  <header class="main-header auth-header">
+    <div class="container header-inner">
+      <a href="../pages/home.html" class="logo">Premium Residencies</a>
+    </div>
+  </header>
+
+  <!-- signup form -->
+  <section class="auth-section">
+    <form class="auth-form" action="#" method="post" novalidate>
+
+      <h1 class="auth-title">Create <span style="color:#d4af37">Account</span></h1>
+      <p class="auth-subtitle">Join us to access exclusive properties and personalized services</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first">First Name</label>
+          <input id="first" name="first" type="text" placeholder="First name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="last">Last Name</label>
+          <input id="last" name="last" type="text" placeholder="Last name" required>
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com">
+        <label for="email2">Email Address</label>
+        <input id="email2" name="email" type="email" placeholder="john@example.com" required>
       </div>
 
       <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+        <input id="phone" name="phone" type="text" placeholder="+1 (555) 000-0000" required>
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required placeholder="Create a strong password">
+        <label for="pass1">Password</label>
+        <input id="pass1" name="password" type="password" placeholder="Create a strong password" required>
       </div>
 
       <div class="form-group">
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+        <label for="pass2">Confirm Password</label>
+        <input id="pass2" name="password2" type="password" placeholder="Confirm your password" required>
       </div>
 
-      <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
-        <input type="checkbox" id="terms" name="terms" required style="width:10px; height:10px;">
-        <label for="terms">I agree to the terms and conditions</label>
+      <div style="margin:12px 0;">
+        <label style="display:flex; align-items:center; gap:8px; color:#bdb7b2;">
+          <input type="checkbox" style="width:16px;height:16px;">
+          <span>I agree to the <a href="#" style="color:#d4af37; text-decoration:none;">Terms of Service</a> and <a href="#" style="color:#d4af37; text-decoration:none;">Privacy Policy</a></span>
+        </label>
       </div>
 
-      <button type="submit" class="form-submit">Create Account</button>
+      <button type="submit" class="btn-primary auth-btn">CREATE ACCOUNT</button>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Sign In</a></p>
+
     </form>
+  </section>
 
-    <div class="form-link">
-      <p>Already have an account? <a href="./login.html">Login here</a></p>
-    </div>
-  </div>
-
-
-
-
-
-  
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
       <div class="footer-section">
-        <h4>Help & Support</h4>
-        <p><a href="#">Contact Us</a></p>
-        <p><a href="#">FAQ</a></p>
-        <p><a href="#">Property Valuation</a></p>
-        <p><a href="#">Financing Options</a></p>
+        <h4>Premium Residencies</h4>
+        <p>Your gateway to premium living and luxury interiors.</p>
       </div>
 
       <div class="footer-section">
-        <h4>Connect With Us</h4>
-        <p>Email: <a href="#">info@premierrealestate.com</a></p>
-        <p>Phone: <a href="#">+1 (800) 773-6437</a></p>
-        <p>Office Hours: Mon - Sat, 9 AM - 6 PM</p>
+        <h4>Quick Links</h4>
+        <p><a href="../pages/buy.html">Buy</a></p>
+        <p><a href="../pages/rent.html">Rent</a></p>
+        <p><a href="../pages/sell.html">Sell</a></p>
+        <p><a href="../pages/interiors.html">Interiors</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: help@premiumresidencies.com</p>
+        <p>Phone: +1 555 123 4567</p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 Premier Real Estate. All rights reserved.</p>
+      © 2025 Premium Residencies. All rights reserved.
     </div>
   </footer>
+
 </body>
 </html>
