@@ -1,38 +1,21 @@
-/* ===========================
-   Premium Residencies — Main Stylesheet
-   Component-based, clean formatting
-   =========================== */
+/* =========================================================
+   PREMIUM RESIDENCIES – CLEAN, READABLE, BEGINNER CSS
+   ========================================================= */
 
-:root {
-  --black: #070707;
-  --bg: #0b0b0b;
-  --maroon: #7b1113;
-  --gold: #d4af37;
-  --muted: #bdb7b2;
-  --card-bg: #111213;
-  --white: #f6f4f2;
+/* ------------------------------
+   BASE RESET + GLOBALS
+   ------------------------------ */
 
-  --radius: 8px;
-  --container-width: 1200px;
-
-  --space-xs: 8px;
-  --space-sm: 12px;
-  --space-md: 20px;
-  --space-lg: 40px;
-  --space-xl: 72px;
-}
-
-/* Base */
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
-  height: 100%;
   font-family: Georgia, serif;
   background: linear-gradient(180deg, #0b0b0b, #070707);
-  color: var(--white);
+  color: #f6f4f2;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -42,22 +25,23 @@ a {
 }
 
 .container {
-  max-width: var(--container-width);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .section {
-  padding: var(--space-xl) 0;
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
-/* ===========================
+/* =========================================================
    HEADER
-   =========================== */
+   ========================================================= */
 
 .main-header {
-  background: linear-gradient(180deg, #050505f9, #080808f2);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: linear-gradient(180deg, #050505, #080808);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -71,37 +55,40 @@ a {
   gap: 18px;
 }
 
-/* Luxury logo */
+/* ----- Logo ----- */
+
 .logo {
-  font-family: Georgia, serif;
   font-size: 24px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, var(--gold), #f3d98b);
+  background: linear-gradient(90deg, #d4af37, #f3d98b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 6px rgba(212,175,55,0.25);
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.25);
 }
 
-/* Desktop nav */
+/* ----- Navigation ----- */
+
 .top-nav ul {
   display: flex;
-  list-style: none;
   gap: 22px;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .top-nav a {
   font-size: 14px;
-  color: var(--muted);
+  color: #bdb7b2;
 }
 
-.top-nav a.active,
-.top-nav a:hover {
-  color: var(--gold);
+.top-nav a:hover,
+.top-nav a.active {
+  color: #d4af37;
 }
+
+/* ----- Header Buttons ----- */
 
 .header-actions {
   display: flex;
@@ -110,40 +97,41 @@ a {
 }
 
 .location-select {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.06);
-  color: var(--muted);
   padding: 8px 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 6px;
-  font-size: 14px;
+  color: #bdb7b2;
 }
 
 .login-link {
   font-size: 14px;
-  color: var(--muted);
+  color: #bdb7b2;
 }
 
 .signup-btn {
-  background: var(--maroon);
-  color: var(--white);
   padding: 9px 14px;
+  background: #7b1113;
+  color: #ffffff;
   border-radius: 8px;
   font-weight: 700;
 }
 
-/* ===========================
-   HERO
-   =========================== */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 
 .hero {
-  min-height: 64vh;
-  padding: var(--space-xl) 0;
+  min-height: 384px;
+  padding: 72px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('../assets/images/hero.jpg');
+
+  background-image: url("../assets/images/hero.jpg");
   background-size: cover;
   background-position: center;
+
   position: relative;
 }
 
@@ -151,56 +139,71 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #0505058e, #050505d9);
+  background: black;
+  opacity: 0.55;
 }
 
 .hero-inner {
   position: relative;
   text-align: center;
   max-width: 900px;
-  padding: 0 12px;
 }
 
 .hero-title {
   font-size: 52px;
   font-weight: 700;
-  margin: 0 0 12px;
-  letter-spacing: -1px;
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .hero-subtitle {
   font-size: 16px;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 0;
   margin-bottom: 22px;
 }
+
+/* Hero Buttons */
 
 .hero-buttons {
   display: flex;
   gap: 14px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.btn-primary {
-  background: var(--maroon);
-  color: var(--white);
+.btn-primary,
+.btn-outline {
+  display: inline-block;
   padding: 12px 22px;
   border-radius: 8px;
   font-weight: 700;
+
+  /* Hover lift */
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.btn-primary {
+  background: #7b1113;
+  color: #ffffff;
 }
 
 .btn-outline {
   padding: 10px 18px;
-  border: 2px solid rgba(212,175,55,0.2);
-  color: var(--gold);
+  color: #d4af37;
   background: transparent;
-  border-radius: 8px;
-  font-weight: 600;
+  border: 2px solid rgba(212, 175, 55, 0.2);
 }
 
-/* ===========================
-   TITLES
-   =========================== */
+.btn-primary:hover,
+.btn-outline:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
 
 .section-title {
   font-size: 32px;
@@ -209,21 +212,26 @@ a {
 }
 
 .section-sub {
-  color: var(--muted);
+  font-size: 14px;
+  color: #bdb7b2;
   margin-bottom: 18px;
 }
 
-/* ===========================
-   SHARED CARD STYLES
-   =========================== */
+/* =========================================================
+   CARD BASE STYLE (reusable)
+   ========================================================= */
 
 .card-base {
-  position: relative;
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  border: 1px solid rgba(212,175,55,0.12);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  background: #111213;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
   padding: 20px;
+
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+
+  /* Hover lift */
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .card-base::after {
@@ -233,14 +241,19 @@ a {
   top: 0;
   width: 8px;
   height: 100%;
-  background: var(--gold);
-  border-top-right-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
+  background: #d4af37;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-/* ===========================
-   SERVICES
-   =========================== */
+.card-base:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================================
+   SERVICES GRID
+   ========================================================= */
 
 .services-grid {
   display: grid;
@@ -249,22 +262,47 @@ a {
 }
 
 .service-card {
-  composes: card-base;
+  background: #111213;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  padding: 20px;
+  position: relative;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: #d4af37;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.5);
 }
 
 .service-card h3 {
   font-size: 18px;
-  margin: 8px 0 10px;
+  margin-top: 8px;
+  margin-bottom: 10px;
 }
 
 .service-card p {
-  color: var(--muted);
   font-size: 14px;
+  color: #bdb7b2;
+  margin: 0;
 }
 
-/* ===========================
-   PROPERTIES
-   =========================== */
+/* =========================================================
+   PROPERTY CARDS
+   ========================================================= */
 
 .properties-grid {
   display: grid;
@@ -273,12 +311,15 @@ a {
 }
 
 .property-card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
+  background: #111213;
+  border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(212,175,55,0.12);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.55);
+
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
   position: relative;
+
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .property-card::after {
@@ -288,13 +329,19 @@ a {
   top: 0;
   width: 6px;
   height: 100%;
-  background: var(--gold);
+  background: #d4af37;
+}
+
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.6);
 }
 
 .property-image {
   height: 180px;
   background-size: cover;
   background-position: center;
+  background-color: #1a1a1a;
 }
 
 .property-info {
@@ -303,22 +350,26 @@ a {
 }
 
 .tag {
-  background: var(--gold);
-  color: var(--black);
+  display: inline-block;
   padding: 6px 8px;
-  border-radius: 6px;
-  font-weight: 700;
+  background: #d4af37;
+  color: #070707;
   font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  margin-bottom: 8px;
 }
 
 .property-info h3 {
   font-size: 18px;
-  margin: 6px 0 4px;
+  margin-top: 6px;
+  margin-bottom: 4px;
 }
 
 .property-info p {
-  color: var(--muted);
+  color: #bdb7b2;
   font-size: 13px;
+  margin: 0;
 }
 
 .property-footer {
@@ -328,27 +379,35 @@ a {
 }
 
 .price {
+  color: #d4af37;
   font-size: 16px;
   font-weight: 800;
-  color: var(--gold);
 }
 
 .btn-small {
-  background: var(--maroon);
-  color: var(--white);
   padding: 8px 12px;
+  background: #7b1113;
+  color: #ffffff;
   border-radius: 6px;
   font-weight: 700;
+
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-/* ===========================
+.btn-small:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
    CTA SECTION
-   =========================== */
+   ========================================================= */
 
 .cta-section {
+  background: linear-gradient(180deg, #080808, #0a0a0a);
   text-align: center;
   padding: 48px 0;
-  background: linear-gradient(180deg, #080808f2, #0a0a0af3);
+  margin-top: 28px;
 }
 
 .cta-title {
@@ -357,18 +416,20 @@ a {
 }
 
 .cta-text {
-  color: var(--muted);
+  color: #bdb7b2;
   margin-bottom: 16px;
 }
 
-/* ===========================
+/* =========================================================
    FOOTER
-   =========================== */
+   ========================================================= */
 
 .site-footer {
   background: linear-gradient(180deg, #070707, #0b0b0b);
-  padding: 40px 0 22px;
+  padding-top: 40px;
+  padding-bottom: 22px;
   margin-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .footer-grid {
@@ -386,27 +447,34 @@ a {
   margin-bottom: 10px;
 }
 
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  margin-top: 22px;
-  padding-top: 16px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
+.footer-section p,
+.footer-section a {
+  color: #bdb7b2;
+  font-size: 14px;
 }
 
-/* ===========================
-   RESPONSIVE — TABLET
-   =========================== */
+.footer-bottom {
+  margin-top: 22px;
+  padding-top: 16px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVENESS — TABLET
+   ========================================================= */
 
 @media (max-width: 1024px) {
   .logo {
     font-size: 20px;
-    letter-spacing: 0.6px;
+    letter-spacing: 1px;
   }
 
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .properties-grid {
@@ -416,31 +484,34 @@ a {
   .hero-title {
     font-size: 44px;
   }
+
+  .container {
+    padding: 0 20px;
+  }
 }
 
-/* ===========================
-   RESPONSIVE — MOBILE (STACKED HEADER)
-   =========================== */
+/* =========================================================
+   RESPONSIVENESS — MOBILE (STACKED HEADER)
+   ========================================================= */
 
 @media (max-width: 720px) {
-
-  /* shrink logo */
+  /* Logo resize */
   .logo {
     font-size: 16px;
-    letter-spacing: 0.4px;
+    letter-spacing: 1px;
   }
 
-  /* hide desktop nav */
+  /* Hide nav */
   .top-nav {
     display: none;
   }
 
-  /* stacked header layout */
+  /* Stacked header */
   .header-inner {
     flex-direction: column;
     text-align: center;
-    padding: 14px 0;
     gap: 14px;
+    padding: 14px 0;
   }
 
   .header-actions {
@@ -459,6 +530,7 @@ a {
   .services-grid,
   .properties-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .hero-title {
