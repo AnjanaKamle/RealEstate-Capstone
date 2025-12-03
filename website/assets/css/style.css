@@ -131,7 +131,6 @@ html, body
   padding: 96px 0;
   position: relative;
   text-align: center;
-  
 }
 
 .hero-inner
@@ -395,6 +394,7 @@ textarea
   box-sizing: border-box;
   transition: border 120ms ease, box-shadow 120ms ease, transform 120ms ease;
 }
+
 input::placeholder,
 textarea::placeholder
 {
@@ -473,6 +473,7 @@ textarea:focus
   color: #bdb7b2;
   font-size: 13px;
 }
+
 .auth-divider::before,
 .auth-divider::after
 {
@@ -481,6 +482,7 @@ textarea:focus
   height: 1px;
   background: rgba(255,255,255,0.03);
 }
+
 .social-row
 {
   display: flex;
@@ -488,6 +490,7 @@ textarea:focus
   justify-content: center;
   margin-top: 10px;
 }
+
 .social-btn
 {
   display: inline-flex;
@@ -504,10 +507,12 @@ textarea:focus
   cursor: pointer;
   transition: transform 140ms ease, box-shadow 140ms ease;
 }
+
 .social-btn:hover
 {
   transform: translateY(-6px);
 }
+
 .social-icon
 {
   width: 22px;
@@ -530,6 +535,7 @@ textarea:focus
   margin-top: 60px;
   border-top: 1px solid rgba(255,255,255,0.03);
 }
+
 .footer-grid
 {
   display: grid;
@@ -537,11 +543,13 @@ textarea:focus
   gap: 24px;
   align-items: start;
 }
+
 .footer-section h4
 {
   margin: 0 0 8px;
   color: #d4af37;
 }
+
 .footer-section p,
 .footer-section a
 {
@@ -549,6 +557,7 @@ textarea:focus
   font-size: 14px;
   text-decoration: none;
 }
+
 .footer-bottom
 {
   text-align: center;
